@@ -1,0 +1,36 @@
+﻿@model AppWithIdentity.Models.Home.LoginModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>RegisterModel</h4>
+    <hr />
+    @using(Html.BeginForm("Login", "Home"))
+    {
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.EditorFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd>
+            @Html.EditorFor(model => model.Password)
+        </dd>
+        <input type="submit" name="LoginButton" value="Login" />
+    </dl>
+
+    }
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
